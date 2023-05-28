@@ -4,8 +4,6 @@
 
 n = int(input('enter a single digit int number: '))
 
-count = (1 + 11 + 111 + 1111 + 11111)
-result = count * n
+result = (1 + 11 + 111 + 1111 + 11111) * n
 
 print(result)
-
