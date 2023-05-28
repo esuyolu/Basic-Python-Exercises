@@ -19,6 +19,7 @@ a[:(mid + len(a) % 2)] = a[(mid + len(a) % 2):]
 a[(mid + len(a) % 2):] = temp
 
 print(a)
+# [60, 70, 80, 90, 100, 10, 20, 30, 40, 50]
 
 # If the list has an odd number of items
 
@@ -32,3 +33,4 @@ b[:mid] = b[(mid + size % 2):]
 b[(mid + size % 2):] = temp
 
 print(b)
+# [70, 80, 90, 100, 110, 60, 10, 20, 30, 40, 50]
