@@ -10,27 +10,25 @@
 # The list can have an odd number of elements.
 # In this case, the middle element should not be affected by the change.
 
-# If the list has an even number of items
-
 a = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 
-size = len(a) // 2
+mid = len(a) // 2
 
-b = a[0:size]
-c = a[size:]
+temp = a[:(mid + len(a) % 2)]
+a[:(mid + len(a) % 2)] = a[(mid + len(a) % 2):]
+a[(mid + len(a) % 2):] = temp
 
-a = c + b
 print(a)
 
 # If the list has an odd number of items
 
-a = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130]
+b = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110]
 
-size = len(a) // 2
+size = len(b)
+mid = size // 2
 
-b = a[0:size]
-c = a[size+1:]
-a[0:size] = c
-a[size+1:] = b
+temp = b[:mid]
+b[:mid] = b[(mid + size % 2):]
+b[(mid + size % 2):] = temp
 
-print(a)
+print(b)
