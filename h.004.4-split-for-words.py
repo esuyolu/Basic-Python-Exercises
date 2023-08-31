@@ -3,15 +3,19 @@
 
 text = input('enter a text: ')
 
-result = []
-res = ''
+words = []
+i = 0
 
-for t in text:
-    if t.isalpha():
-        res += t
-    else:
-        if res != '':
-            result.append(res)
-            res = ''
+while True:
+    while i < len(text) and not text[i].isalnum():
+        i += 1
+    if i == len(text):
+        break
+    start = i
+    while i < len(text) and text[i].isalnum():
+        i += 1
+    words.append(text[start:i])
+    if i == len(text):
+        break
 
-print(result)
+print(words)
