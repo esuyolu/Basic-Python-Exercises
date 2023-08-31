@@ -5,8 +5,16 @@
 
 n = int(input('enter a number: '))
 
-i = 0
-while i <= n:
-    if i % 2 == 0:
+for i in range(n + 1):
+    flag = True
+    val = i
+    while val != 0:
+        digit = val % 10
+        if digit % 2 != 0:
+            flag = False
+            break
+        val //= 10
+    if flag:
         print(i, end=' ')
-    i += 1
+
+
