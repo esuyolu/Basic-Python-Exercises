@@ -19,16 +19,13 @@
 width = int(input('width: '))
 height = int(input('height: '))
 
-w = 0
-
-for h in range(height):
-    if h == width:
-        w = 0
-    print('|', end='')
-    for w in range(width):
-        if h == w:
-            print('*', end='')
-        else:
-            print(' ', end='')
-    print('|')
+pos = 0
+direction = 1
+for _ in range(height):
+    print('|' + ' ' * pos + '*' + ' ' * (width - pos - 1) + '|')
+    if pos == width - 1:
+        direction = -1
+    elif pos == 0:
+        direction = 1
+    pos += direction
 
